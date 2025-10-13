@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vídeos - Mi primera página Web</title>
+   <link rel="stylesheet" href="styles.css"> <!-- CSS -->
+</head>
+<body>
+  <!-- Cabecera -->
+  <header>
+    <h1>Mi primera página Web - Vídeos</h1>
+  </header>
+
+  <!-- Menú -->
+  <nav>
+    <ul>
+      <li><a href="main.html#inicio">INICIO</a></li>
+      <li><a href="main.html#sobre-mi">SOBRE MÍ</a></li>
+      <li>
+        <a href="main.html#servicios">SERVICIOS</a>
+        <ul>
+          <li><a href="main.html#desarrollo-web">DESARROLLO WEB</a></li>
+          <li><a href="main.html#programacion">PROGRAMACIÓN</a></li>
+          <li><a href="main.html#html">HTML</a></li>
+        </ul>
+      </li>
+      <li><a href="videos.html#videos">VÍDEOS</a></li>
+      <li><a href="main.html#contacto">CONTACTO</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+    <section id="videos">
+      <h2>Vídeos</h2>
+      <p>Aquí puedes ver algunos vídeos de prueba en diferentes formatos.</p>
+
+      <!-- Vídeo en formato MP4 -->
+      <video controls width="480">
+        <source src="media/video1.mp4" type="video/mp4">
+        Tu navegador no soporta el formato MP4.
+      </video>
+
+      <br><br>
+
+      <!-- Vídeo en formato AVI -->
+      <video controls width="480">
+        <source src="media/video2.avi" type="video/avi">
+        Tu navegador no soporta el formato AVI.
+      </video>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2025 - Mi primera página Web</p>
+  </footer>
+</body>
+</html>
+

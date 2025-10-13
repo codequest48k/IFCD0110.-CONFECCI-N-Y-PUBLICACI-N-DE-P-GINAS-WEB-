@@ -1,0 +1,50 @@
+/* Menú de navegación */
+nav ul {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+  background-color: #004080;
+}
+
+/* Los elementos del menú */
+nav ul li {
+  display: inline-block; 
+  margin-right: 15px;
+  position: relative; 
+}
+
+/* Los enlaces */
+nav ul li a {
+  text-decoration: none; 
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  display: block;
+}
+
+/* Hover simple */
+nav ul li a:hover {
+  color: yellow;
+}
+
+/* Submenú */
+nav ul li ul {
+  display: none; 
+  position: absolute; 
+  background-color: #004080;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Mostrar submenú  */
+nav ul li:hover ul {
+  display: block;
+}
+
+/* Submenú  */
+nav ul li ul li a {
+  padding: 8px 12px;
+  display: block;
+  white-space: nowrap;
+}
