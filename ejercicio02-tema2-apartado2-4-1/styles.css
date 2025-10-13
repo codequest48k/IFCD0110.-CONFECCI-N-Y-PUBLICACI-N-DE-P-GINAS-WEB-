@@ -1,0 +1,122 @@
+/* Estilos Globales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fa; /* Fondo muy claro */
+    color: #333; /* Gris Oscuro para texto */
+    line-height: 1.6;
+}
+
+/* ==================================== */
+/* ESTILOS DE CABECERA (HEADER)         */
+/* ==================================== */
+header {
+    background-color: #1a73e8; /* Azul primario */
+    color: white;
+    padding: 30px 20px;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* CLASE TRADUCIDA: .contenido-cabecera */
+.contenido-cabecera {
+    max-width: 900px;
+    margin: 0 auto; /* Centra el contenido del header */
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2.2em;
+    font-weight: 500;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+/* ==================================== */
+/* ESTILOS DE MAIN / TABLA     */
+/* ==================================== */
+main {
+    padding-bottom: 50px;
+}
+
+table {
+    border-collapse: collapse; 
+    width: 650px; 
+    margin: 20px auto; /* Centra la tabla */
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    border-radius: 12px; 
+    overflow: hidden;
+}
+
+td {
+    text-align: center;
+    padding: 25px 15px;
+    vertical-align: top;
+}
+
+/* Línea divisoria vertical para la primera columna de la tabla */
+/* CLASE TRADUCIDA: .fila-accion */
+tr:not(.fila-accion) td:first-child {
+    border-right: 1px solid #ddd;
+}
+
+/* CLASE TRADUCIDA: .titulo-logo */
+.titulo-logo {
+    font-size: 1.6em;
+    color: #333; /* Gris Oscuro */
+    margin-top: 0;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #1a73e8; /* Azul primario */
+    padding: 15px 0;
+    background-color: #f7f9fa; /* Fondo muy claro */
+    margin: -25px -15px -25px -15px; 
+    font-weight: 400;
+}
+
+/* Estilos de las Imágenes */
+img {
+    display: block; 
+    margin: 20px auto; 
+    border-radius: 50%; 
+    border: 5px solid transparent; 
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+a:hover img {
+    border-color: #fbbc05; /* Naranja/Amarillo de acento */ 
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================================== */
+/* ESTILOS DE PIE DE PÁGINA (FOOTER)    */
+/* ==================================== */
+footer {
+    background-color: #333; /* Gris Oscuro */
+    color: #a4a4a4;
+    padding: 20px 0;
+    font-size: 0.85em;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* CLASE TRADUCIDA: .separador */
+.separador {
+    color: #555; 
+    margin: 0 8px;
+}
