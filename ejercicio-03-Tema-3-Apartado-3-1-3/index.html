@@ -1,0 +1,186 @@
+
+
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resultado de la búsqueda - Tienda ejemplo</title>
+  <style>
+    /* Fuentes y colores modernos */
+    body { font-family: 'Poppins', Arial, sans-serif; line-height:1.6; margin:0; padding:0; background:#f0f2f5; color:#222; }
+    a { color:#1a73e8; text-decoration:none; transition:0.2s; }
+    a:hover { text-decoration:underline; }
+    
+    header, main, footer { max-width:1200px; margin:0 auto; padding:1rem; }
+    header { background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
+    header h1 { margin:0 0.5rem; font-size:1.8rem; }
+    nav ul { list-style:none; display:flex; gap:1rem; padding:0; margin:0; }
+    nav li { display:inline; }
+    nav a { font-weight:500; }
+
+    section { background:#fff; margin:1rem 0; padding:1rem 1.5rem; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
+    section h2 { border-bottom:2px solid #1a73e8; padding-bottom:0.5rem; margin-bottom:1rem; }
+
+    /* Tabla de productos */
+    table { width:100%; border-collapse:separate; border-spacing:0; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+    th, td { padding:12px 15px; text-align:left; }
+    th { background:#1a73e8; color:white; font-weight:600; }
+    tbody tr:nth-child(even) { background:#f9f9f9; }
+    tbody tr:hover { background:#e8f0fe; }
+
+    img { max-width:100%; height:auto; display:block; border-radius:6px; }
+
+    /* Botones */
+    button { background:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; transition:0.3s; font-weight:600; }
+    button:hover { background:#1558b0; }
+
+    /* Formulario moderno */
+    form { display:flex; flex-direction:column; gap:0.75rem; }
+    input, textarea { padding:10px; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
+    input:focus, textarea:focus { outline:none; border-color:#1a73e8; box-shadow:0 0 5px rgba(26,115,232,0.3); }
+
+    /* Multimedia */
+    figure { margin:0; text-align:center; }
+    figcaption { font-size:0.9rem; color:#555; margin-top:0.25rem; }
+
+    /* Capa flotante */
+    .floating-card { position:absolute; top:10px; right:10px; background:#1a73e8; color:white; padding:12px; border-radius:8px; z-index:1000; box-shadow:0 2px 6px rgba(0,0,0,0.2); }
+
+    footer { text-align:center; padding:1rem; color:#555; font-size:0.9rem; }
+
+   
+  </style>
+</head>
+<body>
+ 
+
+  <!-- Cabecera principal -->
+  <header role="banner">
+    <h1>Resultado de la búsqueda</h1>
+    <nav role="navigation" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#multimedia">Multimedia</a></li>
+        <li><a href="#demo-frames">Frames</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#herramientas">Herramientas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="maincontent" role="main">
+    <!-- Bloque tabla de productos -->
+    <section id="productos" aria-labelledby="titulo-productos">
+      <h2 id="titulo-productos">Productos</h2>
+      <table>
+        <caption>Resultado de la búsqueda</caption>
+        <thead>
+          <tr>
+            <th scope="col">Imagen</th>
+            <th scope="col">Datos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="media/macbook.jpeg" alt="Portátil gris sobre mesa" width="160" height="100"></td>
+            <td>
+              <h3><a href="pages/producto-portatil.html">Portátil - 3 GHz - 4 GB RAM</a></h3>
+              <p><a href="#">Comprar</a>: <del>2.990 €</del> <strong>2.599 €</strong></p>
+              <ul>
+                <li>Procesador: 3 GHz</li>
+                <li>RAM: 4 GB</li>
+                <li>Almacenamiento: 256 GB SSD</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="media/videocamara.jpeg" alt="Videocámara negra con micrófono"></td>
+            <td>
+              <h3><a href="pages/producto-vc.html">Videocámara - 1080p - 60 GB</a></h3>
+              <p><a href="#">Comprar</a>: <del>1.099 €</del> <strong>999 €</strong></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Bloque multimedia -->
+    <section id="multimedia" aria-labelledby="titulo-multimedia">
+      <h2 id="titulo-multimedia">Multimedia</h2>
+   <figure>
+  <img src="descuento.jpeg" 
+       alt="Banner promocional: -10% en todos los productos" 
+       style="width:100%; max-height:250px; object-fit:cover;">
+  <figcaption>Promoción semanal</figcaption>
+</figure>
+      <audio controls>
+        <source src="media/sonido1.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+      <video controls width="640">
+        <source src="media/video1.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+      </video>
+    </section>
+
+    <!-- Bloque iframe / marcos -->
+    <section id="demo-frames" aria-labelledby="titulo-frames">
+      <h2 id="titulo-frames">Contenido embebido (iframe)</h2>
+      <nav>
+        <ul>
+          <li><a href="pages/info.html" target="contentFrame">Info</a></li>
+          <li><a href="pages/ayuda.html" target="contentFrame">Ayuda</a></li>
+        </ul>
+      </nav>
+      <iframe name="contentFrame" src="pages/info.html" title="Contenido principal" width="100%" height="400" style="border:1px solid #ccc;"></iframe>
+    </section>
+
+    <!-- Bloque capas y JS sencillo -->
+    <section id="herramientas" aria-labelledby="tools">
+      <h2 id="tools">Herramientas</h2>
+      <button onclick="alert('¡Mensaje de prueba!')">Mostrar mensaje</button>
+      <div style="position:relative; height:160px; border:1px dashed #ccc; margin-top:8px;">
+
+            <!-- Tarjeta flotante con contenido real -->
+    <div class="floating-card" style="
+        position:absolute;
+        top:10px;
+        right:10px;
+        background:linear-gradient(135deg, #ff7e5f, #feb47b);
+        color:white;
+        padding:12px 16px;
+        border-radius:8px;
+        box-shadow:0 4px 8px rgba(0,0,0,0.2);
+        max-width:220px;
+        font-family:Arial, sans-serif;
+        z-index:100;
+    ">
+
+    
+
+        <div class="floating-card">Oferta del día: -10%</div>
+        <p style="padding:12px;">Zona con contenido sobre la que aparece la tarjeta flotante.</p>
+      </div>
+    </section>
+
+    <!-- Formulario y enlaces -->
+    <section id="contacto" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto">Contacto</h2>
+      <form action="mailto:info@ejemplo.com" method="post">
+        <label for="name">Nombre</label>
+        <input id="name" name="name" type="text" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+        <button type="submit">Enviar</button>
+      </form>
+     
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2025 Tienda ejemplo</p>
+  </footer>
+</body>
+</html>

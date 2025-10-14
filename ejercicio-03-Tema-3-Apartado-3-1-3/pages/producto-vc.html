@@ -1,0 +1,67 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle Videocámara</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      line-height:1.5; 
+      margin:0; 
+      padding:2rem; 
+      background:#f6f7fb; 
+      color:#111; 
+      display:flex; 
+      justify-content:center; 
+    }
+    .info { 
+      background:white; 
+      padding:2rem; 
+      border-radius:12px; 
+      box-shadow:0 4px 12px rgba(0,0,0,0.15); 
+      max-width:500px; 
+      width:100%; 
+    }
+    h1, h2 { color:#0645AD; text-align:center; }
+    img { 
+      max-width:100%; 
+      height:auto; 
+      display:block; 
+      margin:1rem auto; 
+      border-radius:8px; 
+      box-shadow:0 2px 6px rgba(0,0,0,0.1); 
+    }
+    a { text-decoration:none; color:#0645AD; font-weight:bold; }
+    a:hover { text-decoration:underline; }
+    ul { list-style: disc inside; }
+    p strong { color:#E63946; font-size:1.1rem; }
+    footer { text-align:center; margin-top:1rem; font-size:0.9rem; color:#555; }
+  </style>
+</head>
+<body>
+
+  <div class="info">
+    <h1>Videocámara - 1080p - 60 GB</h1>
+
+    <img src="../media/videocamara.jpeg" alt="Videocámara negra con micrófono">
+
+    <h2>Especificaciones:</h2>
+    <ul>
+      <li>Resolución: 1080p Full HD</li>
+      <li>Almacenamiento: 60 GB</li>
+      <li>Conectividad: HDMI, USB</li>
+      <li>Zoom: 10x óptico</li>
+    </ul>
+
+    <p><strong>Precio:</strong> <del>1.099 €</del> <strong>999 €</strong></p>
+    <p><a onclick="alert('¡Producto Comprado!')" href="#">Comprar</a></p>
+
+    <p><a href="../index.html">Volver a la tienda</a></p>
+  </div>
+
+</body>
+</html>

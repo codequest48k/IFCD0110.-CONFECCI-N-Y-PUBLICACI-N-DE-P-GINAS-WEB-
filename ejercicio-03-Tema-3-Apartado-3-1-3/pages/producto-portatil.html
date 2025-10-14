@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto - Portátil</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      line-height:1.5; 
+      margin:2rem; 
+      background:#f6f7fb; 
+      color:#111; 
+    }
+    header, footer { text-align:center; margin-bottom:1rem; }
+    h1, h2 { color:#0645AD; }
+    .info {
+      background:white; 
+      padding:2rem; 
+      border-radius:12px; 
+      box-shadow:0 4px 12px rgba(0,0,0,0.15); 
+      max-width:600px; 
+      margin:0 auto;
+    }
+    img { 
+      max-width:100%; 
+      height:auto; 
+      display:block; 
+      margin:1rem auto; 
+      border-radius:8px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    }
+    a { text-decoration:none; color:#0645AD; font-weight:bold; }
+    a:hover { text-decoration:underline; }
+    ul { list-style: disc inside; }
+    .precio { font-size:1.2rem; font-weight:bold; color:#E63946; }
+    footer p { font-size:0.9rem; color:#555; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portátil - 3 GHz - 4 GB RAM</h1>
+  </header>
+
+  <main class="info">
+    <!-- Imagen del producto -->
+    <img src="../media/macbook.jpeg" alt="Portátil gris sobre mesa">
+
+    <!-- Lista de características -->
+    <section aria-labelledby="caracteristicas">
+      <h2 id="caracteristicas">Características</h2>
+      <ul>
+        <li>Procesador: 3 GHz</li>
+        <li>RAM: 4 GB</li>
+        <li>Almacenamiento: 256 GB SSD</li>
+        <li>Pantalla: 15 pulgadas</li>
+        <li>Sistema operativo: Windows 10</li>
+      </ul>
+    </section>
+
+    <!-- Precio y compra -->
+    <section aria-labelledby="precio-compra">
+      <h2 id="precio-compra">Precio y Compra</h2>
+      <p>Antes: <del>2.990 €</del></p>
+      <p class="precio">Ahora: 2.599 €</p>
+      <p><a onclick="alert('¡Producto Comprado!')" href="#">Comprar este producto</a></p>
+    </section>
+
+    <p><a href="../index.html">Volver a la tienda</a></p>
+  </main>
+
+  <footer>
+    
+    <p>© 2025 Tienda ejemplo</p>
+  </footer>
+</body>
+</html>
+
