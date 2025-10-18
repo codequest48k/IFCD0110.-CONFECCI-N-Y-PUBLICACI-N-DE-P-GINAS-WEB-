@@ -1,0 +1,153 @@
+/* ----- Estilos globales ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----- Header ----- */
+
+
+
+.header-left {
+    /* Esto coloca el logo y el teléfono en línea, uno al lado del otro */
+    display: flex;
+    /* Centra ambos elementos verticalmente */
+    align-items: center;
+    /* Añade un pequeño espacio entre el logo y el teléfono */
+    gap: 15px; 
+}
+
+header {
+    background-color: #0077c8;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    max-height: 50px;
+}
+
+/* ----- Navegación ----- */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #fcd703;
+}
+
+/* ----- Contenedor principal ----- */
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex: 1; /* Empuja el footer abajo */
+}
+
+/* ----- Tarjeta principal ----- */
+.card {
+    flex: 3;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    word-wrap: break-word; /* Ajusta el texto largo */
+}
+
+/* ----- Aside lateral ----- */
+aside {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente todo el contenido */
+    text-align: center;  /* Centra el texto */
+    word-wrap: break-word; /* Evita que se salga el texto */
+    gap: 10px;
+}
+
+/* ----- Artículos ----- */
+article {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ----- Encabezados ----- */
+h1, h2, h3, h4 {
+    color: #0077c8;
+}
+
+/* ----- Links ----- */
+a {
+    color: #0077c8;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ----- Multimedia ----- */
+figure {
+    text-align: center;
+    margin: 15px 0;
+}
+
+video, audio {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* NUEVOS ESTILOS PARA CERTIFICADOS */
+
+/* 1. Contenedor horizontal */
+.certificates {
+    display: flex;
+    justify-content: center; /* Centra las imágenes dentro del contenedor */
+    gap: 10px; /* Espacio entre las dos imágenes */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible en el aside */
+}
+
+/* 2. Tamaño de las imágenes */
+/* Limita el tamaño de cada imagen para que quepan una al lado de la otra */
+.certificates img {
+    max-width: 48%; /* Un poco menos del 50% para dejar espacio para el 'gap' */
+    height: auto;
+}
+
+/* ----- Footer ----- */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #e9ecef;
+    font-size: 0.9rem;
+}

@@ -33,6 +33,12 @@ ejercicio-04-Tema-4-apartado-4-2-5/
 │
 └── readme.md # Documentación del proyecto
 
+## 🌍 Página publicada (GitHub Pages)
+
+El proyecto está disponible online a través de GitHub Pages en el siguiente enlace:
+
+🔗 https://codequest48k.github.io/IFCD0110.-CONFECCI-N-Y-PUBLICACI-N-DE-P-GINAS-WEB-/ejercicio-04-Tema-4-apartado-4-2-5/index.html
+
 
 ---
 
