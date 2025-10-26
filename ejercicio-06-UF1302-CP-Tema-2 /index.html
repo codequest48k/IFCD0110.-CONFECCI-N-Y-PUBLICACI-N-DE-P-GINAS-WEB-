@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiolibros de Terror - Ambiente</title>
+    
+    <style>
+        #contenedor {
+            text-align: left;
+            width: 100%;
+            margin: auto;
+        }
+
+        #lateral {
+            width: 60%; 
+            float: right;
+        }
+
+        #principal {
+            width: 25%;
+            float: left;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="contenedor" class="clearfix">
+        
+        <div id="principal">
+            
+            <h1>Audiolibros de terror</h1>
+            
+            <div class="audiolibro">
+                <p>Manuscrito de un loco por Charles Dickens</p>
+                <audio controls>
+                    <source src="manuscrito.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+            
+            <div class="audiolibro">
+                <p>El corazón delator por Edgar A. Poe</p>
+                <audio controls>
+                    <source src="corazon.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+            
+            <div class="audiolibro">
+                <p>El gato, el alguacil y el esqueleto por A. Dumas</p>
+                <audio controls>
+                    <source src="gato.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+            
+        </div>
+        
+        <div id="lateral">
+            <video width="100%" height="auto" autoplay muted loop playsinline>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+        
+    </div>
+    <footer>
+ 
+    <a href="mi_version.html">Mi version de la web</a>
+</footer>
+</body>
+</html>
