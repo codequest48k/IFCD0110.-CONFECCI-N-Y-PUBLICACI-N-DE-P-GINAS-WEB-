@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Solapamiento y Z-Index</title>
+    
+    <style>
+        /* Configuraciones generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Contenedor principal */
+        .container-wrapper {
+            width: 90%;
+            max-width: 600px;
+            position: relative; 
+            height: 450px; 
+        }
+
+        /* Estilo base para los bloques principales (Bloque 1, 2, 3) */
+        .bloque-base {
+            position: absolute; 
+            border: 2px solid #333; 
+            padding: 10px;
+            font-weight: bold;
+            color: #333;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box; 
+            text-align: left;
+        }
+
+        /* ------------------------------------------- */
+        /* ESTILOS DE LOS BLOQUES PRINCIPALES */
+        /* ------------------------------------------- */
+
+        /* BLOQUE 1: */
+        .bloque-1 {
+            background-color: #dbeafe; 
+            width: 70%;
+            height: 120px;
+            top: 50px;
+            left: 50px;
+            z-index: 40; 
+        }
+
+        /* BLOQUE 2:  */
+        .bloque-2 {
+            background-color: #d1fae5;
+            width: 60%;
+            height: 350px;
+            top: 0;
+            left: 150px;
+            z-index: 20; 
+            position: relative; 
+            padding: 0; 
+            border-color: #34d399; 
+        }
+        
+        /* BLOQUE 3:*/
+        .bloque-3 {
+            background-color: #fef3c7; 
+            width: 80%;
+            height: 150px;
+            top: 300px;
+            left: 0;
+            z-index: 5; 
+            border-color: #f59e0b; 
+        }
+        
+        /* ------------------------------------------- */
+        /* ESTILOS DE LOS BLOQUES HIJOS (Dentro de Bloque 2) */
+        /* ------------------------------------------- */
+
+        .hijo-base {
+            position: absolute;
+            border: 1px solid #333;
+            font-size: 0.875rem; 
+            padding: 5px;
+            font-weight: normal;
+            border-radius: 3px;
+            color: white;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hijo 1: */
+        .hijo-1 {
+            background-color: #60a5fa; 
+            width: 80%;
+            height: 100px;
+            top: 100px;
+            left: 10%;
+            z-index: 40; 
+        }
+
+        /* Hijo 2:  */
+        .hijo-2 {
+            background-color: #a0a0a0; 
+            width: 50%;
+            height: 300px;
+            top: 20px;
+            right: 5%; 
+            z-index: 30;
+            color: black;
+            border-color: #333;
+        }
+
+        /* Hijo 3  */
+        .hijo {
+            background-color: #f87171; 
+            width: 70%;
+            height: 90px;
+            bottom: 20px;
+            left: 10%;
+            z-index: 25; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-wrapper">
+        <!-- BLOQUE 2: El contenedor principal con Z-index 20 -->
+        <div class="bloque-base bloque-2">
+            BLOQUE 2
+            
+            <!-- Hijo 2: Z-index 30 (encima de todo) -->
+            <div class="hijo-base hijo-2">Hijo 2 de bloque 2</div>
+
+            <!-- Hijo 1: Z-index 9 (debajo de Bloque 1) -->
+            <div class="hijo-base hijo-1">Hijo 1 de bloque 2</div>
+            
+            <!-- Hijo: Z-index 25 (encima del Bloque 2, debajo de Hijo 2) -->
+            <div class="hijo-base hijo">Hijo</div>
+
+        </div>
+
+        <!-- BLOQUE 1: Z-index 10 -->
+        <div class="bloque-base bloque-1">
+            BLOQUE 1
+        </div>
+
+        <!-- BLOQUE 3: Z-index 5 (fondo) -->
+        <div class="bloque-base bloque-3">
+            BLOQUE 3
+        </div>
+
+    </div>
+
+</body>
+</html>

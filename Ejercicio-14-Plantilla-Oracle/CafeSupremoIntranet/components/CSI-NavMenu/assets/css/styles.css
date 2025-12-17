@@ -1,0 +1,176 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+
+/* NOTE: Do NOT change any styles in this file as it will change the look and feel of this Custom 
+    Component across ALL Themes/Sites.
+
+    Instead, copy the specific styles being overridden into the designs.css file of the Theme and 
+    prefix it with .CSI-NavMenu-default-style.
+        Example
+            Add the following to your Theme's design.css file to override the dropdown menu 
+            background color:
+                .CSI-NavMenu-default-style .dropdown-menu {
+                    background-color: blue;
+                }
+
+    Or create a new style(s) and prefix by that name instead, allowing the default style to remain 
+    untouched. But this new style name also needs to be added to the design.json file for it to be 
+    exposed/selectable by the end user in the Sites editor.
+        Example
+            Add the following to your Theme's design.css file to allow for the dropdown menu 
+            background color to be manually overridden:
+                .CSI-NavMenu-blue-style .dropdown-menu {
+                    background-color: blue;
+                }
+            Add the following in your Theme's design.json file to expose this new style in the Sites 
+            editor:
+                "CSI-NavMenu": {
+                    "styles": [
+                        {
+                            "name": "Blue",
+                            "class": "CSI-NavMenu-blue-style"
+                        }			
+                    ]
+                }        
+            In this case, once the CSI-NavMenu component has been dropped onto a Site page the user can 
+            go into the styles of the component and select "Blue" to change the background color.
+*/
+
+.CSI-NavMenu {
+    font-weight: 600;
+    font-size: 16px;
+}
+.CSI-NavMenu li {
+    list-style-type: none;
+    float: left;
+}
+.CSI-NavMenu li:focus-within,
+.CSI-NavMenu li:hover {
+    color: #ffffff;
+    background-color: saddlebrown;
+}
+.CSI-NavMenu li a.active:focus,
+.CSI-NavMenu li a.active:hover {
+    color: #ffffff;
+}
+.CSI-NavMenu li a:focus:not(.active),
+.CSI-NavMenu li a:hover:not(.active) {
+    color: #ffffff;
+}
+.CSI-NavMenu ul {
+    padding-left: 0;
+}
+.CSI-NavMenu .menuItems {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    z-index: 99;
+}
+.CSI-NavMenu li a {
+    display: block;
+    color: #000000;
+    padding: 21px 1.4vw 21px;
+    text-align: center;
+    text-decoration: none;
+}
+.CSI-NavMenu a.active {
+    color: #f48f42;
+}
+.CSI-NavMenu .menuButton {
+    display: none;
+    font-size: 28px;
+    padding: 10px 20px 15px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #000000;
+}
+.CSI-NavMenu.active .menuButton {
+    color: #f48f42;
+}
+.CSI-NavMenu .menuButton:focus,
+.CSI-NavMenu .menuButton:hover {
+    color: saddlebrown;
+    outline-offset: -10px;
+}
+.CSI-NavMenu .subMenu {
+    display: none;
+    z-index: 99;
+}
+.CSI-NavMenu .subMenu .menuItems {
+    display: grid;
+    position: absolute;
+}
+.CSI-NavMenu .subMenu a {
+    text-align: left;
+    padding: 10px 20px;
+}
+.CSI-NavMenu li:focus-within .subMenu,
+.CSI-NavMenu li:hover .subMenu {
+    display: block;
+}
+.CSI-NavMenu .subMenu li:hover,
+.CSI-NavMenu .subMenu li a.active:focus,
+.CSI-NavMenu .subMenu li a:focus:not(.active),
+.CSI-NavMenu .subMenu li a.active:hover,
+.CSI-NavMenu .subMenu li a:hover:not(.active) {
+    color: #ffffff;
+}
+.CSI-NavMenu .subMenu li {
+    float: none;
+}
+.CSI-NavMenu .menuItems > li > .subMenu {
+    position: absolute;
+    border-width: 2px;
+    background-color: saddlebrown;
+    min-width: 10rem;
+}
+
+@media screen and (max-width: 767px) {
+    .CSI-NavMenu {
+        text-align: right;
+    }
+    .CSI-NavMenu li {
+        float: none;
+        min-width: 160px;
+    }
+    .CSI-NavMenu li a {
+        padding: 12px 20px;
+    }
+    .CSI-NavMenu .menuItems {
+        position: absolute;
+        background-color: saddlebrown;
+        /* NOTE: Matching dropdown menu up to what the right margin is set to in the Component so that it stays in line with the dropdown button */
+        right: 0;
+    }
+    .CSI-NavMenu .menuItems {
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        z-index: 99;
+    }
+    .CSI-NavMenu .menuButton {
+        display: inline-block;
+    }
+    .CSI-NavMenu li a {
+        text-align: left;
+    }
+    .CSI-NavMenu .menuItems {
+        display: none;
+    }
+    .CSI-NavMenu.active .menuItems {
+        display: block;
+    }
+    .CSI-NavMenu .subMenu {
+        display: block;
+    }
+    .CSI-NavMenu .menuItems > li > .subMenu {
+        position: inherit;
+        border: none;
+        /* Having to do in order to clean up the right side border in the dropdown menu */
+        background-color: transparent;
+    }
+    .CSI-NavMenu .subMenu div {
+        margin-left: 20px;
+    }
+}

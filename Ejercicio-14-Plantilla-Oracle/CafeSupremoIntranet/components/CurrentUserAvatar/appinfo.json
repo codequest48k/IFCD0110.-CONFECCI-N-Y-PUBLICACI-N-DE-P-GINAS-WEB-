@@ -1,0 +1,12 @@
+{
+	"id": "CurrentUserAvatar",
+	"settingsData": {
+		"settingsRenderOption": "none"
+	},
+	"initialData": {
+		"componentId": "currentUserAvatar",
+		"componentName": "Current User Avatar Component",
+		"componentLayout": "default",
+		"customSettingsData": {}
+	}
+}

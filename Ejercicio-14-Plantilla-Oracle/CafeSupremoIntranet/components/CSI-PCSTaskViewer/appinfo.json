@@ -1,0 +1,17 @@
+{
+	"id": "CSI-PCSTaskViwer",
+	"settingsData": {
+		"settingsHeight": 370,
+		"settingsWidth": 500,
+		"settingsRenderOption": "dialog"
+	},
+	"initialData": {
+		"componentId": "CSI-PCSTaskViwer",
+		"componentLayout": "default",
+		"customSettingsData": {
+			"height": "370px",
+			"width": "500px"
+		},
+		"nestedComponents": []
+	}
+}

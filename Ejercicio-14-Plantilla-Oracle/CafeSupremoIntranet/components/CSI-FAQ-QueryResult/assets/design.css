@@ -1,0 +1,35 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+
+.CSI-FAQ-QueryResult {
+    color: #333;
+    line-height: 1.5;
+    padding: 0.625rem 1.25rem;
+    text-align: left;
+}
+.CSI-FAQ-QueryResult ul {
+    margin: 0 0.3125rem;
+}
+.CSI-FAQ-QueryResult .Query {
+    text-decoration: underline;
+    font-size: 1rem;
+    width: fit-content;
+}
+.CSI-FAQ-QueryResult .Query:hover,
+.CSI-FAQ-QueryResult .Query:focus {
+    /* color: #f48f42; */
+    color: saddlebrown;
+    cursor: pointer;
+}
+.CSI-FAQ-QueryResult .Description {
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    -webkit-line-clamp: 1;
+    /* line-height * 1 lines */
+    max-height: 1.3125em;
+}

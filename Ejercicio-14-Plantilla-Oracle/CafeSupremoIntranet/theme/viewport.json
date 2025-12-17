@@ -1,0 +1,54 @@
+{
+	"viewportDimensions": [
+		{
+			"label": "Layout (1440x3000)",
+			"width": 1440,
+			"height": 3000
+		},
+		{
+			"label": "iPhone5 (320x568)",
+			"width": 320,
+			"height": 568
+		},
+		{
+			"label": "iPhone6 (375x667)",
+			"width": 375,
+			"height": 667
+		},
+		{
+			"label": "iPhone6 Plus (414x736)",
+			"width": 414,
+			"height": 736
+		},
+		{
+			"label": "iPad (768x1024)",
+			"width": 768,
+			"height": 1024
+		},
+		{
+			"label": "GalaxyS5 (360x640)",
+			"width": 360,
+			"height": 640
+		},
+		{
+			"label": "Nexus6P (412x732)",
+			"width": 412,
+			"height": 732
+		},
+		{
+			"label": "Desktop (1024x768)",
+			"width": 1024,
+			"height": 768
+		},
+		{
+			"label": "Desktop Medium (1280x1024)",
+			"width": 1280,
+			"height": 1024
+		},
+		{
+			"label": "Desktop Large (1600x1200)",
+			"width": 1600,
+			"height": 1200
+		}
+	]
+}

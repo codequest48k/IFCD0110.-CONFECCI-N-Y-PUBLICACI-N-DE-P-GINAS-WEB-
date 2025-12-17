@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+-->
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <!-- Avoid FOUC issue in FF with async loading of style sheets -->
+    <style>
+        body {
+            opacity: 0;
+        }
+    </style>
+
+    <title>Cafe Supremo Intranet</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="<!--$SCS_SITE_PATH-->/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="_scs_theme_root_/designs/_scs_design_name_/design.css">
+
+    <!--$SCS_RENDER_INFO-->
+    <!--$SCS_SITE_HEADER-->
+    <!--$SCS_PAGE_HEADER-->
+
+    <!-- Get the query parameter and convert it into a Sites Macro value so that it can be used in the OOTB Content List Component -->
+    <script type="text/javascript">
+        var createMacros = function () {
+            if (SCSRenderAPI.placeholderContent.contentType === "CSI-FAQ") {
+                window.SCSMacros = window.SCSMacros || {};
+                $.ajax({
+                    url: window.location.origin + '/content/published/api/v1.1/items/' + SCSRenderAPI.placeholderContent.contentId + '?channelToken=' + SCS.siteInfo.properties.channelAccessTokens[0].value,
+                    async: false,
+                    success: function (itemdata) {
+                        var fields = itemdata.fields;
+                        var CategoryQuery = 'fields.query_category mt "' + fields.query_category.replace(/[^a-zA-Z ']/g, " ") + '"';
+                        var ItemsIDs = [];
+                        $.ajax({
+                            url: '/content/published/api/v1.1/items/?q=(type eq "' + SCSRenderAPI.placeholderContent.contentType + '")' + ' and (' + CategoryQuery + ')' + '&fields=ALL&orderBy=updatedDate:des&channelToken=' + SCS.siteInfo.properties.channelAccessTokens[0].value,
+                            async: false,
+                            success: function (data) {
+                                var IdsQuery = "";
+                                for (var i = 0; i < data.items.length; i++) {
+                                    if (data.items[i].id !== itemdata.id) {
+                                        ItemsIDs.push(data.items[i].id);
+                                    }
+                                }
+                                if (ItemsIDs.length > 0) {
+                                    IdsQuery = 'id eq "' + ItemsIDs[0] + '"';
+                                }
+                                for (var i = 1; i < ItemsIDs.length; i++) {
+                                    IdsQuery = IdsQuery + ' or id eq "' + ItemsIDs[i] + '"';
+                                }
+                                window.SCSMacros.IdsQuery = IdsQuery;
+                            },
+                            error: function () {
+                                console.log("Error in getting category query");
+                            }
+                        });
+                        console.log(CategoryQuery);
+                    },
+                    error: function () {
+                        console.log("Error in getting FAQ INFO");
+                    }
+                });
+            }
+        }
+        document.addEventListener('scsrenderstart', createMacros, false);
+    </script>
+</head>
+
+<body id="page-default">
+    <!-- Needed to override the default Sites Theme styles -->
+    <link rel="stylesheet" href="_scs_theme_root_/assets/css/styles.css">
+
+    <div class="header">
+        <div class="logocontainer scs-slot" id="logocontainer"></div>
+        <div class="navMenu scs-slot" id="navMenu"></div>
+        <div class="currentUser scs-slot" id="currentUser"></div>
+    </div>
+
+    <main>
+        <div class="banner scs-slot" id="banner">
+        </div>
+
+        <div class="details scs-slot" id="Details">
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer scs-slot scs-responsive" id="footer">
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script data-main="/_sitescloud/renderer/renderer.js" src="/_sitescloud/renderer/require.js"></script>
+
+    <!--$SCS_PAGE_FOOTER-->
+    <!--$SCS_SITE_FOOTER-->
+
+    <!-- Avoid FOUC issue in FF with async loading of style sheets -->
+    <style>
+        body {
+            opacity: 1;
+        }
+    </style>
+</body>
+
+</html>

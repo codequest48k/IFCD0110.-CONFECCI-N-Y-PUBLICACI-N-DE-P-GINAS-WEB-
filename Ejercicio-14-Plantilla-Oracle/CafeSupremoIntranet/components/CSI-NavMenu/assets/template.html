@@ -1,0 +1,19 @@
+<!--
+Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+-->
+
+<script type="text/html" id="submenu-template">
+    <li>
+        <a data-bind="attr: {href: destination, target: linkTarget}, css: {'active': isActive}">
+            <div data-bind="text: name"></div>
+        </a>
+        <!-- ko if: $data.menuItems().length > 0 -->          
+        <ul class="subMenu" data-bind="template: {name: 'submenu-template', foreach: $data.menuItems}"></ul>
+        <!-- /ko -->
+    </li>
+</script>
+
+<div class="CSI-NavMenu">
+    <a class="menuButton" data-bind="click: toggleMenu" href="#menuButton" aria-label="Menu Button">&#9776;</a>
+    <ul class="menuItems" data-bind="template: {name: 'submenu-template', foreach: menuItems}"></ul>
+</div>

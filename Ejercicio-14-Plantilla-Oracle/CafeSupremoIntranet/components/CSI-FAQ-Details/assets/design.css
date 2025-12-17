@@ -1,0 +1,76 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+
+.CSI-FAQ-Details {
+    font-size: 1rem;
+    text-align: left;
+}
+.CSI-FAQ-Details .Category {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    /*line-height: 3em;*/
+    color: #000;
+}
+.CSI-FAQ-Details .Query {
+    font-size: 0.875rem;
+    line-height: 1.25em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #333;
+}
+.CSI-FAQ-Details .Query h1 {
+    font-weight: 400;
+}
+.CSI-FAQ-Details .PublishedInfo {
+    color: #5e5e5e;
+    padding-bottom: 1em;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 0.5em;
+}
+.CSI-FAQ-Details .PublishedInfo span {
+    padding: 0 0.625rem;
+    white-space: nowrap;
+}
+.CSI-FAQ-Details .PublishedInfo span:first-child {
+    border-right: 1px solid lightgrey;
+    padding-left: 0;
+}
+.CSI-FAQ-Details .Question {
+    font-size: 1rem;
+    line-height: 1.5em;
+    padding-bottom: 2.5rem;
+}
+.CSI-FAQ-Details .Answer {
+    font-size: 1rem;
+    line-height: 1.5em;
+    padding-bottom: 0.625rem;
+}
+.CSI-FAQ-Details .Answer a {
+    /* color: #f48f42; */
+    color: saddlebrown;
+    text-decoration: none;
+}
+.CSI-FAQ-Details .Answer a:hover,
+.CSI-FAQ-Details .Answer a:focus {
+    color: saddlebrown;
+    text-decoration: underline;
+}
+.CSI-FAQ-Details .ShareOptions {
+    font-size: 1rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid lightgrey;
+}
+.CSI-FAQ-Details .ShareOptions a {
+    color: #b72025;
+}
+.CSI-FAQ-Details .ShareOptions a:hover,
+.CSI-FAQ-Details .ShareOptions a:focus {
+    color: saddlebrown;
+}
+@media screen and (max-width: 767px) {
+    .CSI-FAQ-Details .PublishedInfo span:first-child {
+        padding-left: 0.625rem;
+        border-right: none;
+    }
+}

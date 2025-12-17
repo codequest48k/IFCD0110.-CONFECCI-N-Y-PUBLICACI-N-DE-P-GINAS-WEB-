@@ -1,0 +1,248 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+
+/* Main Theme Styles */
+* {
+    box-sizing: border-box;
+    outline-width: 1px;
+}
+/* :-moz-focusring {
+	outline-style: auto;
+	outline-color: highlight;
+} */
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+button,
+select,
+input,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input[type="button"] {
+    -webkit-appearance: button;
+}
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+        "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    max-width: 1700px;
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+}
+.banner {
+    min-height: 150px;
+}
+.content {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px 2%;
+}
+
+.details {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px 2%;
+    text-align: center;
+}
+a,
+a:visited {
+    color: #333;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: saddlebrown;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+/* SCS Styles */
+.scs-button-button {
+    background: #975c2b;
+    color: white;
+    border-color: #975c2b;
+    padding: 0 10px;
+}
+.scs-button .scs-button-button {
+    padding: 10px;
+}
+.scs-button .scs-button-text {
+    white-space: normal;
+}
+.scs-button a,
+.scs-button a:visited {
+    color: #f0d5b1;
+}
+.scs-button a:hover,
+.scs-button a:focus {
+    color: #244b55;
+}
+#page-default .headline {
+    padding: 20px 1%;
+}
+.headline .scs-title .scs-title-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #975c2b;
+}
+.oneslot .scs-title .scs-title-text {
+    font-size: 28px;
+}
+#page-default .content .scs-title .scs-title-text {
+    font-weight: bold;
+    color: #696969;
+    text-align: center;
+}
+#page-index .scs-title .scs-title-text {
+    font-size: 28px;
+    color: white;
+    background-color: #402416;
+    /*padding-bottom: 3.25px;*/
+    height: 48px;
+    padding-left: 8px;
+    padding-top: 3.25px;
+    margin-bottom: 1px;
+    margin-top: -0.5px;
+}
+.scs-component-bounding-box {
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+}
+.scs-socialbar-container a:focus {
+    outline-offset: -2px;
+}
+.scs-socialbar-container a {
+    margin-right: 5px;
+}
+.scs-socialbar-container a img {
+    margin: 0px !important;
+}
+a.scs-image-link:focus {
+    outline-offset: -1px;
+}
+
+/* Hack to remove the border on the last row in the newsArticle-summary list */
+.scs-component-content
+    .scs-component-container:nth-child(3)
+    .newsArticle-summary {
+    border-bottom: 0;
+}
+
+/* Overridden styles for the Current User Avatar custom component */
+.currentUserAvatar .userText {
+    color: saddlebrown;
+    font-weight: bold;
+}
+
+/* Stop resizing Content Layouts at 1600px (the max window width of the hosting details div) */
+@media (min-width: 1600px) {
+    .bio-card {
+        margin: 16px;
+    }
+    .bio-card .name {
+        font-size: 25.6px;
+        padding: 6.4px 8px;
+    }
+    .bio-card .contentItem {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+        min-height: 240px;
+    }
+    .bio-card .description {
+        font-size: 28.8px;
+        padding-top: 19.2px;
+    }
+    .bio-card .bio {
+        font-size: 19.2px;
+        padding: 16px 0;
+    }
+    .bio-card .social {
+        bottom: 32px;
+    }
+}
+
+/* Stop resizing remaining Content Layouts at 1600px (the max window width of the hosting body div) */
+@media (min-width: 1700px) {
+    .newsArticle-list .date {
+        font-size: 34px;
+    }
+    .newsArticle-list .name {
+        font-size: 68px;
+    }
+    .newsArticle-list .description {
+        font-size: 51px;
+    }
+
+    .newsArticle-grid .date {
+        font-size: 17px;
+    }
+    .newsArticle-grid .name {
+        font-size: 30.6px;
+    }
+    .newsArticle-grid .description {
+        font-size: 27.2px;
+    }
+}
+
+/*  Header Styles */
+.header {
+    display: flex;
+}
+.logocontainer {
+    flex: 0 1 220px;
+}
+.navMenu {
+    flex: 1;
+}
+.currentUser {
+    flex: 0 0 62px;
+    margin-left: auto;
+}
+.userArea {
+    color: #ffffff;
+}
+
+/*  Footer Styles */
+footer {
+    height: 100px;
+    padding: 0 2vw;
+    display: table;
+    width: 100%;
+}
+.footer {
+    display: table-cell;
+    vertical-align: middle;
+}
+.footer .scs-title-text {
+    font-family: arial;
+    font-size: 14px;
+    text-align: right;
+}
+@media (max-width: 767px) {
+    /*  Footer Styles */
+    .scs-socialbar,
+    .footer .scs-image {
+        text-align: center !important;
+    }
+    .footer .scs-image .scs-image-image {
+        width: 60%;
+        margin: 1vw 0;
+    }
+}

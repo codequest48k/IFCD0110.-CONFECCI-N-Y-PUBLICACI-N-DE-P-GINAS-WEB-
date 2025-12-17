@@ -1,0 +1,46 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+.newsArticle-summary-link{
+    display: block;
+}
+.newsArticle-summary-link:focus {
+    outline-offset: -3px;
+}
+.newsArticle-summary {
+    height: 101px;
+    padding: 10px;
+    border-bottom: 1px solid #dfe4e7;
+}
+/* TODO: This does not work correctly */
+/*.newsArticle-summary:last-child {
+    border-bottom: 0;	
+}*/
+.newsArticle-summary .container {
+    width: calc(100% - 81px);
+    float: left;
+    padding-right: 10px;
+}
+.newsArticle-summary .title {
+    font-size: 18px;
+    height: 23px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.newsArticle-summary .description {
+    font-size: 14px;
+    height: 61px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.newsArticle-summary .image {
+    height: 100%;
+    float: right;
+}

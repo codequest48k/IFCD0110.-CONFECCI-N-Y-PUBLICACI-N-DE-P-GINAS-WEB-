@@ -1,0 +1,46 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+
+/* All properties of this component should be prefixed with .currentUserAvatar in order to prevent scoping issues */
+
+.currentUserAvatar {
+    float: right;
+}
+
+.currentUserAvatar button {
+    background-color: transparent;
+    padding: 2px;
+    border: none;
+    margin: 1px;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+}
+
+.currentUserAvatar .userAvatarImage {
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+    -moz-border-radius: 23px;
+    -webkit-border-radius: 23px;
+    border: 1px solid black;
+    background: black;
+}
+
+.currentUserAvatar .hide {
+    display: none !important;
+}
+
+.currentUserAvatar #dropdown {
+    position: absolute;
+    padding: 10px 20px;
+    background: white;
+    top: 60px;
+    z-index: 2;
+    font-size: 16px;
+    line-height: 12px;
+    font-weight: 600;
+    right: 0;
+    box-shadow: 0px 0px 5px saddlebrown;
+}

@@ -1,0 +1,17 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+
+.newsArticle-details {
+    font-size: 16px;
+}
+.newsArticle-details .image {
+    max-height: 400px;
+}
+.newsArticle-details .title {
+    font-size: 30px;
+    font-weight: bold;
+}
+.newsArticle-details .content {
+    font-size: 20px;
+}

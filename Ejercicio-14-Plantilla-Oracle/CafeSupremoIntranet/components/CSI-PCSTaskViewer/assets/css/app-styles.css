@@ -1,0 +1,71 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+
+#app-body {
+    margin: 0px;
+    overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+#imageId {
+    vertical-align: top;
+}
+
+#titleId {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 0px;
+    margin-bottom: 14px;
+}
+
+#paragraphId {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.4em;
+    margin-top: 0px;
+    margin-bottom: 14px;
+}
+
+#linkId {
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#linkId a {
+    color: #145fab;
+    text-decoration: none;
+}
+
+.settings-heading {
+    color: #ffffff;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding-bottom: 3px;
+    padding-top: 5px;
+}
+
+.settings-text-box {
+    border-radius: 2px;
+    height: 2.5em;
+    background-color: rgb(62, 64, 66);
+    border: 1px solid rgb(79, 82, 84);
+    box-sizing: border-box;
+    color: rgb(183, 187, 191);
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    min-width: 14px;
+    padding: 0px 5px;
+    width: 100%;
+}
+
+.settings-error {
+    color: #333333;
+    background-color: #ffcccc;
+    padding: 5px;
+}

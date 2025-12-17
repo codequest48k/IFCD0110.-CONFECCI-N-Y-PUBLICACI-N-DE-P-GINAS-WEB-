@@ -1,0 +1,12 @@
+<!--
+Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+-->
+
+<div class="currentUserAvatar">
+    <button class="userAvatar" data-bind="attr: {title: person}, click: toggleDropdownMenu" aria-labelledby="User Avatar">
+        <img class="userAvatarImage" data-bind="attr:{src: userAvatarURL, alt: 'User Avatar: '+ person()}">
+    </button>
+    <div id="dropdown" class="hide">
+        <a data-bind="attr: {href:logoutUrl}, event: {blur: dropDownBlur}">Logout</a>
+    </div>
+</div>

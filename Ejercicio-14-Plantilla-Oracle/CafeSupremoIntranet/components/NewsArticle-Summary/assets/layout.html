@@ -1,0 +1,14 @@
+<!--
+Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+-->
+
+<a href="{{scsData.detailPageLink}}" class="newsArticle-summary-link">
+	<div class="newsArticle-summary">
+		<div class="container">
+			<div class="title">{{name}}</div>
+			<div class="description">{{description}}</div>
+		</div>
+		<!-- TODO: Need to do this the right way because this hard coded URL will only ever get the published V1 version of the DAM object -->
+		<img class="image" src={{imageURL}} alt="{{name}}" data-asset-operation="view:{{fields.newsarticle_image.id}}">
+	</div>
+</a>

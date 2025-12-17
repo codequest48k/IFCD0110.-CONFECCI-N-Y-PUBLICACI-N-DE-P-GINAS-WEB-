@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- CRITERIO DE USABILIDAD: Diseño Responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción a Clases</title>
+    <!-- Se mantiene la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ----------------------------------- */
+        /* ESTILOS GENERALES Y LAYOUT BASE */
+        /* ----------------------------------- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 1.875rem; 
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem; 
+            color: #4a5568; 
+        }
+
+        .form-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* ----------------------------------- */
+        /* ESTILOS DE AGRUPACIÓN (FIELDSET) */
+        /* ----------------------------------- */
+        fieldset {
+           
+            border: 2px solid #cbd5e0;
+            padding: 1.5rem;
+            border-radius: 0.75rem; 
+            margin-bottom: 1.5rem;
+            background-color: white;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        /* CRITERIO DE ACCESIBILIDAD */
+        fieldset:focus-within {
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+        }
+
+        legend {
+            font-size: 1.25rem; 
+            font-weight: 600;
+            color: #2c5282; 
+            padding: 0 0.5rem;
+        }
+
+        /* CRITERIO DE USABILIDAD: Indicador de campo obligatorio claro. */
+        .required-label::after {
+            content: " *";
+            color: #e53e3e; /* Rojo */
+            font-weight: 700;
+        }
+
+        /* ----------------------------------- */
+        /* ESTILOS DE CAMPOS DE ENTRADA */
+        /* ----------------------------------- */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .form-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .col-span-2 {
+                grid-column: span 2 / span 2;
+            }
+            .grid-3-cols {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem; 
+            font-weight: 500; 
+            color: #4a5568; 
+            margin-bottom: 0.25rem;
+        }
+
+        .input-text, select, textarea {
+            display: block;
+            width: 100%;
+            border: 1px solid #d2d6dc; 
+            border-radius: 0.375rem; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+            padding: 0.625rem; 
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            background-color: white;
+            margin-top: 0.25rem; 
+        }
+
+        /* Foco para campos de texto, select y textarea */
+        .input-text:focus, select:focus, textarea:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            border-color: #4299e1; 
+            box-shadow: 0 0 0 1px #4299e1; 
+        }
+        
+        textarea {
+            padding: 0.75rem;
+        }
+        
+        /* Estilos para Radio y Checkbox Group */
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem; /* gap-6 / gap-4 */
+            margin-top: 0.5rem;
+        }
+
+        .radio-group-item, .checkbox-group-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-group-item input[type="radio"], 
+        .checkbox-group-item input[type="checkbox"] {
+            height: 1rem;
+            width: 1rem;
+            color: #4299e1; 
+            border-color: #d2d6dc; 
+        }
+        
+        .radio-group-item label, .checkbox-group-item label {
+            margin-left: 0.5rem; 
+            margin-bottom: 0;
+            font-size: 0.875rem;
+        }
+
+        /* Estilo simplificado para input type="file" */
+        input[type="file"] {
+             font-size: 0.875rem;
+             color: #4a5568;
+             padding: 0.5rem 0; 
+        }
+
+        /* ----------------------------------- */
+        /* ESTILOS DE BOTONES */
+        /* ----------------------------------- */
+        .button-group {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            padding-top: 1rem; 
+        }
+
+        .button-base {
+            padding: 0.5rem 1.5rem; 
+            border-radius: 0.375rem; 
+            font-weight: 600; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+            transition: all 0.15s ease-in-out;
+            cursor: pointer;
+        }
+
+        .button-reset {
+            background-color: #f7fafc; 
+            border: 1px solid #cbd5e0; 
+            color: #4a5568; 
+        }
+
+        .button-reset:hover {
+            background-color: #edf2f7; 
+        }
+        
+        .button-submit {
+            background-color: #3182ce;
+            border: 1px solid transparent;
+            color: white;
+        }
+        
+        .button-submit:hover {
+            background-color: #2c5282; 
+        }
+
+        .button-base:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #4299e1; 
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <!-- Contenedor principal del formulario -->
+    <div class="container">
+        <h1>Inscripción a Clases Académicas</h1>
+        
+        <!-- El formulario utilizará la validación nativa de HTML5 (atributo 'required') -->
+        <form id="registroFormulario" action="#" method="post" enctype="multipart/form-data" class="form-layout">
+
+            <!-- GRUPO 1: DATOS PERSONALES (Obligatorios: Nombre, Apellidos, Dirección) -->
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <div class="form-grid">
+                    
+                    <!-- Nombre (Obligatorio) -->
+                    <div>
+                        <label for="nombre" class="required-label">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required aria-required="true" 
+                               class="input-text" placeholder="Ingrese su nombre">
+                    </div>
+
+                    <!-- Apellidos (Obligatorio) -->
+                    <div>
+                        <label for="apellidos" class="required-label">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" required aria-required="true"
+                               class="input-text" placeholder="Ingrese sus apellidos">
+                    </div>
+
+                    <!-- Dirección (Obligatorio) -->
+                    <div class="col-span-2">
+                        <label for="direccion" class="required-label">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" required aria-required="true"
+                               class="input-text" placeholder="Calle, número, código postal">
+                    </div>
+
+                    <!-- Fecha de Nacimiento -->
+                    <div>
+                        <label for="fechaNacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento"
+                               class="input-text">
+                    </div>
+                    
+                    <!-- Foto de Perfil -->
+                    <div>
+                        <label for="fotoPerfil">Foto de perfil</label>
+                        <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*"
+                               class="input-text file-input">
+                    </div>
+
+                    <!-- Género (Radio Buttons) -->
+                    <div class="col-span-2" style="margin-top: 0.5rem;">
+                        <p style="margin-bottom: 0.5rem;">Género:</p>
+                        <div class="radio-group">
+                            <div class="radio-group-item">
+                                <input type="radio" id="generoHombre" name="genero" value="Hombre">
+                                <label for="generoHombre">Hombre</label>
+                            </div>
+                            <div class="radio-group-item">
+                                <input type="radio" id="generoMujer" name="genero" value="Mujer">
+                                <label for="generoMujer">Mujer</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </fieldset>
+
+            <!-- GRUPO 2: CLASES Y PREFERENCIAS -->
+            <fieldset>
+                <legend>Clases, Idioma y Horario</legend>
+                
+                <!-- Clases a Asistir (Checkboxes) -->
+                <div style="margin-bottom: 1.5rem;">
+                    <p style="margin-bottom: 0.5rem;">Clases a las que quiere asistir:</p>
+                    <div class="checkbox-group" id="clases-checkboxes" style="gap: 1rem;">
+                        <!-- Clases -->
+                        <div class="checkbox-group-item">
+                            <input type="checkbox" id="matematicas" name="clases[]" value="Matematicas">
+                            <label for="matematicas">Matemáticas</label>
+                        </div>
+                        <div class="checkbox-group-item">
+                            <input type="checkbox" id="lengua" name="clases[]" value="Lengua">
+                            <label for="lengua">Lengua</label>
+                        </div>
+                        <div class="checkbox-group-item">
+                            <input type="checkbox" id="historia" name="clases[]" value="Historia">
+                            <label for="historia">Historia</label>
+                        </div>
+                        <div class="checkbox-group-item">
+                            <input type="checkbox" id="geografia" name="clases[]" value="Geografia">
+                            <label for="geografia">Geografía</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid grid-3-cols">
+                    
+                    <!-- Idioma de la Clase (Select/Dropdown) -->
+                    <div>
+                        <label for="idioma">Idioma de la clase</label>
+                        <select id="idioma" name="idioma">
+                            <option value="">-- Seleccione un idioma --</option>
+                            <option value="ingles">Inglés</option>
+                            <option value="aleman">Alemán</option>
+                            <option value="frances">Francés</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Fecha de Inicio -->
+                    <div>
+                        <label for="fechaInicio">Fecha para comenzar la clase</label>
+                        <input type="date" id="fechaInicio" name="fechaInicio" class="input-text">
+                    </div>
+                    
+                    <!-- Hora de Inicio (Selector tipo Dropdown con opciones de 08:00 a 18:00) -->
+                    <div>
+                        <label for="horaInicio" class="required-label">Hora para comenzar la clase (08:00 - 18:00)</label>
+                        <!-- Campo obligatorio con validación HTML5 -->
+                        <select id="horaInicio" name="horaInicio" required class="input-text">
+                            <option value="">-- Seleccione una hora --</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                        </select>
+                    </div>
+                </div>
+                
+            </fieldset>
+
+            <!-- COMENTARIOS ADICIONALES -->
+            <fieldset>
+                <legend>Comentarios Adicionales</legend>
+                <label for="comentarios" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Comentarios extra</label>
+                <textarea id="comentarios" name="comentarios" rows="4" 
+                          placeholder="Añada cualquier comentario o solicitud extra aquí..."></textarea>
+            </fieldset>
+
+
+            <!-- BOTONES DE ACCIÓN -->
+            <div class="button-group">
+                <!-- Botón Borrar Datos (reset) -->
+                <button type="reset" 
+                        class="button-base button-reset">
+                    Borrar Datos
+                </button>
+                
+                <!-- Botón Enviar (submit) -->
+                <button type="submit" 
+                        class="button-base button-submit">
+                    Enviar
+                </button>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>

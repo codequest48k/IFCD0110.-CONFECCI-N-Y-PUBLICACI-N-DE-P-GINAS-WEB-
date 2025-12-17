@@ -1,0 +1,28 @@
+<!--
+Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+-->
+
+{{#fields}}
+<!-- <div class="bio-card" aria-label="{{name}} {{description}}" role="group"> -->
+	<div class="bio-card">
+	<div class="name">{{name}}</div>
+	<img class="image" src="{{bio_image.url}}" alt="{{name}}" data-asset-operation="view:{{bio_image.id}}">	
+	<!-- <div class="contentItem" id="contentItem"> -->
+	<div class="contentItem">
+		<div class="description">{{description}}</div>
+		<div class="bio">{{bio_content}}</div>
+
+		<div class="social">
+			<a href="{{bio_facebook}}">
+				<img src="{{assetsURL}}/facebook.png" alt="Follow {{name}} on Facebook">
+			</a>
+			<a href="{{bio_linkedin}}">
+				<img src="{{assetsURL}}/linkedin.png" alt="Follow {{name}} on Linkedin">
+			</a>
+			<a href="{{bio_twitter}}">
+				<img src="{{assetsURL}}/twitter.png" alt="Follow {{name}} on Twitter">
+			</a>
+		</div>
+	</div>
+</div>
+{{/fields}}

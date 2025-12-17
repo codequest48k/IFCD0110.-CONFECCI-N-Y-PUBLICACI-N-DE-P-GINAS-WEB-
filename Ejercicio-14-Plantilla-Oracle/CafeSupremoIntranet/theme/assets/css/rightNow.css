@@ -1,0 +1,32 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+
+/* RightNow theme specific styling overrides */
+.KnowledgeSyndication {
+    padding-left: calc(1% + 5px);
+    padding-right: calc(1% + 5px);
+}
+div.rn_Content .rn_List li.rn_Item span.rn_Title a {
+    font-size: 1.2em;
+}
+div.rn_Documents .rn_List li.rn_Item span.rn_Title,
+div.rn_Documents .rn_List li.rn_Item span.rn_Description,
+div.rn_Corrections .rn_WordCorrection,
+div.rn_Content .rn_List li.rn_Item span.rn_Title,
+div.rn_Content .rn_List li.rn_Item span.rn_Description,
+div.rn_Documents .rn_List li.rn_Item span.rn_Title a {
+    font-size: 1.16em;
+}
+div.rn_Navigation a {
+    font-size: 1em;
+}
+div.rn_SearchArea {
+    padding-bottom: 15px;
+}
+div.rn_Content .rn_List {
+    padding-left: 20px;
+}
+li.rn_Item {
+    padding-bottom: 5px;
+}

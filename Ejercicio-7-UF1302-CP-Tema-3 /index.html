@@ -1,0 +1,125 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de CV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f5f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background-color: white;
+      padding: 20px 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    fieldset {
+      border: none;
+    }
+
+    legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="file"] {
+      width: 100%;
+      padding: 6px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      margin-top: 10px;
+      margin-right: 10px;
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="cvForm" action="#" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <legend><strong>Rellene su CV</strong></legend>
+
+      <label for="nombre">Nombre</label><br>
+      <input type="text" id="nombre" name="nombre"><br>
+
+      <label for="apellidos">Apellidos</label><br>
+      <input type="text" id="apellidos" name="apellidos"><br>
+
+      <label for="contrasena">Contraseña</label><br>
+      <input type="password" id="contrasena" name="contrasena"><br>
+
+      <label for="dni">DNI</label><br>
+      <input type="text" id="dni" name="dni"><br>
+
+      <label>Sexo</label><br>
+      <input type="radio" id="hombre" name="sexo" value="Hombre" checked>
+      <label for="hombre">Hombre</label><br>
+      <input type="radio" id="mujer" name="sexo" value="Mujer">
+      <label for="mujer">Mujer</label><br><br>
+
+      <label for="foto">Incluir mi foto</label>
+      <input type="file" id="foto" name="foto"><br>
+
+      <input type="checkbox" id="boletin" name="boletin" checked>
+      <label for="boletin">Suscribirme al boletín de novedades</label><br><br>
+
+      <input type="submit" value="Guardar cambios">
+      <input type="reset" value="Borrar los datos introducidos">
+    </fieldset>
+  </form>
+
+  <script>
+    const form = document.getElementById('cvForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const apellidos = document.getElementById('apellidos').value;
+      const contrasena = document.getElementById('contrasena').value;
+      const dni = document.getElementById('dni').value;
+      const sexo = document.querySelector('input[name="sexo"]:checked').value;
+      const boletin = document.getElementById('boletin').checked ? "Sí" : "No";
+
+      alert(
+        "Datos del formulario:\n\n" +
+        "Nombre: " + nombre + "\n" +
+        "Apellidos: " + apellidos + "\n" +
+        "Contraseña: " + contrasena + "\n" +
+        "DNI: " + dni + "\n" +
+        "Sexo: " + sexo + "\n" +
+        "Boletín: " + boletin
+      );
+    });
+  </script>
+
+</body>
+</html>

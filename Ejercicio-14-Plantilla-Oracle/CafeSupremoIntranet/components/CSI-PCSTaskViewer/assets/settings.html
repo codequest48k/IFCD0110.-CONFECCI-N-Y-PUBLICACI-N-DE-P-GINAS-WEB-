@@ -1,0 +1,117 @@
+<!--
+Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- only allow embedding of this iFrame in SCS -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>PCS Task Viewer Settings</title>
+	<link href="css/app-styles.css" rel="stylesheet">
+	<script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/knockout.min.js"></script>
+	<script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/_sitescloud/renderer/app/sdk/js/sites.min.js"></script>		
+</head>
+
+<body style="margin:0px; padding:0px;">
+	<!-- ko if: initialized() -->
+	<div class="scs-component-settings">
+		<div class="settings-box" tabindex="-1">
+			<div class="box-content">
+				<form role="form" style="padding: 10px;">
+					<div class="form-group">
+						<label for="pcs-url-text" class="settings-heading" style="padding-top: 10px; display: inline-block;" >PCS URL</label>
+						<input class="settings-text-box" id="pcs-url-text" data-bind='value: retrieveTasksURL' />
+						<label for="pcs-task-assigment-text" class="settings-heading">PCS Task Assignment</label>
+						<input class="settings-text-box" id="pcs-task-assigment-text" data-bind='value: taskAssignment' />
+						<label for="pcs-process-name-text" class="settings-heading">PCS Process Name (optional)</label>
+						<input class="settings-text-box" id="pcs-process-name-text" data-bind='value: pcsProcessName' />
+						<label for="public-link-upload-folder" class="settings-heading">Documents Folder Public Link (optional)*</label>
+						<input class="settings-text-box" id="public-link-upload-folder" data-bind='value: docsFolderPublicLink' />		
+						<label class="settings-heading">* Requires Document ID as the value of "id" element in task payload.</label>
+						<label for="document-height" class="settings-heading">Document Height</label>
+						<input class="settings-text-box" id="document-height" data-bind='value: docHeight' />		
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+	<!-- /ko -->
+	<!-- ko ifnot: initialized() -->
+	<div data-bind="text: 'Waiting for initialization to complete.'"></div>
+	<!-- /ko -->
+	
+	<script>
+		function SettingsViewModel(config) {
+			var self = this;
+
+			// create the observables for passing data
+			self.retrieveTasksURL = ko.observable();
+			self.taskAssignment = ko.observable();
+			self.pcsProcessName = ko.observable();
+			self.docsFolderPublicLink = ko.observable();
+			self.docHeight = ko.observable();
+			
+			// create rest of viewModel
+			self.initialized = ko.observable(false);
+			self.saveData = false;
+			   
+			// Get custom settings
+			SitesSDK.getProperty('customSettingsData', function (data) {
+				//update observable
+				self.retrieveTasksURL(data.retrieveTasksURL);
+				self.taskAssignment(data.taskAssignment);
+				self.pcsProcessName(data.pcsProcessName);
+				self.docsFolderPublicLink(data.docsFolderPublicLink);
+				if(data.docHeight === undefined){
+					console.log("Setting default value for Document Height to 600.");
+					data.docHeight = 600;
+				}
+				self.docHeight(data.docHeight);
+
+				// note that viewModel is initialized and can start saving data
+				self.initialized(true);
+				self.saveData = true;
+				
+				//Allow only numeric value in Document Height
+				$("#document-height").keypress(function (e) {
+					//if the letter is not digit then don't type anything
+					if (e.which !== 8 && e.which !== 0 && (e.which < 48 || e.which > 57)) {
+						return false;
+					}
+			   });		
+			});
+			
+		
+			self.save = ko.computed(function () {
+				//save
+				console.log("height = "+ self.docHeight());
+				
+				var saveconfig = { 
+						'retrieveTasksURL': self.retrieveTasksURL(),
+						'taskAssignment': self.taskAssignment(),
+						'pcsProcessName': self.pcsProcessName(),
+						'docsFolderPublicLink': self.docsFolderPublicLink(),
+						'docHeight': String(self.docHeight()) === "" ? 600 : self.docHeight()
+					};
+				
+				if (self.saveData) {
+					SitesSDK.setProperty('customSettingsData', saveconfig);
+					console.log("Settings saved. retrieveTasksURL = " + saveconfig.retrieveTasksURL + ", taskAssignment = "+
+							saveconfig.taskAssignment + ", pcsProcessName = " + saveconfig.pcsProcessName + 
+							", docsFolderPublicLink = " + saveconfig.docsFolderPublicLink + 
+							", docHeight = " + saveconfig.docHeight);
+				}				
+			}, self);
+		};
+
+		ko.applyBindings(new SettingsViewModel());
+	
+	</script>
+
+</body>
+
+</html>

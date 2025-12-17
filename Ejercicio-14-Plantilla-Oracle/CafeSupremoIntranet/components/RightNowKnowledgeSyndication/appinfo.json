@@ -1,0 +1,20 @@
+{
+	"id": "RightNowKnowledgeSyndication",
+	"settingsData": {
+		"settingsWidth": 300,
+		"settingsHeight": 270,
+		"settingsRenderOption": "dialog",
+		"triggers": [],
+		"actions": []
+	},
+	"initialData": {
+		"componentId": "RightNowKnowledgeSyndication",
+		"componentName": "RightNowKnowledgeSyndication",
+		"customSettingsData": {
+			"rightNowDomainName": "",
+			"rightNowSiteName": "",
+			"rightNowMaxResults": "10"
+		},
+		"nestedComponents": []
+	}
+}

@@ -1,0 +1,61 @@
+/**
+ * Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+ */
+
+.newsArticle-grid-link {
+    display: block;
+}
+.newsArticle-grid-link:focus {
+    outline-offset: -4px;
+}
+.newsArticle-grid {
+    line-height: 1.2;
+    padding: 2px;
+}
+.newsArticle-grid .contentItem {
+    font-family: San Francisco;
+    color: white;
+    text-shadow: 0 0 10px black, 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000,
+        0 -1px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+        -1px 1px 0 #000;
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    padding-left: 10%;
+    padding-right: 5%;
+    transition: 0.5s;
+}
+.newsArticle-grid .contentText {
+    top: 50%;
+    transform: translate(0, -50%);
+    position: relative;
+}
+.newsArticle-grid .date {
+    font-size: 1vw;
+}
+.newsArticle-grid .name {
+    font-size: 1.8vw;
+    font-weight: bolder;
+}
+.newsArticle-grid .description {
+    font-size: 1.6vw;
+}
+.newsArticle-grid .contentItemImage {
+    width: 100%;
+}
+.convoFrame {
+    min-width: 100% !important;
+}
+
+@media (max-width: 767px) {
+    .newsArticle-grid .date {
+        font-size: 3vw;
+    }
+    .newsArticle-grid .name {
+        font-size: 5vw;
+        font-weight: bolder;
+    }
+    .newsArticle-grid .description {
+        font-size: 4vw;
+    }
+}

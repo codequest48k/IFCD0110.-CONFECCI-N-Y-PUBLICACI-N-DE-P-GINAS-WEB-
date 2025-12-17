@@ -1,0 +1,16 @@
+{
+	"id": "CSI-EmbedIframe",
+	"settingsData": {
+		"settingsHeight": 225,
+		"settingsWidth": 400,
+		"settingsRenderOption": "dialog"
+	},
+	"initialData": {
+		"componentId": "CSI-EmbedIframe",
+		"customSettingsData": {
+			"renderUrl": "",
+			"iframeTitle": "Iframe",
+			"iframeHeight": "1000px"
+		}
+	}
+}

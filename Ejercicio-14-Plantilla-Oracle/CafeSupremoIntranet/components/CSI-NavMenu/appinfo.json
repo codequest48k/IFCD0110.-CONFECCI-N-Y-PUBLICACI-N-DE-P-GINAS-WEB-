@@ -1,0 +1,14 @@
+{
+    "id": "CSI-NavMenu",
+    "settingsData": {
+        "settingsRenderOption": "none" 
+    },
+    "initialData": {
+        "componentId": "CSI-NavMenu",
+        "componentName": "Cafe Supremo Internet Navigation Menu",
+        "marginBottom": 0,
+        "marginLeft": 0,
+        "marginRight": 0,
+        "marginTop": 0
+    }
+}

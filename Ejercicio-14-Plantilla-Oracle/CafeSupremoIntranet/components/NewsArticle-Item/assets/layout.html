@@ -1,0 +1,16 @@
+<!--
+Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+-->
+
+{{#fields}}
+<div class="newsArticle-details">
+	<p class="title">{{name}}</p>
+	<div class="author">
+		By <span>{{newsarticle_author}}</span> - <strong>{{formattedDate}}</strong>
+	</div>
+	<!-- TODO: Need to do this the right way because this hard coded URL will only ever get the published V1 version of the DAM object -->
+	<img class="image" alt="{{name}}" src={{imageURL}} data-asset-operation="view:{{newsarticle_image.id}}">
+	<br><br>
+	<p class="content">{{{newsarticle_content}}}</p>
+</div>
+{{/fields}}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+-->
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<!-- Avoid FOUC issue in FF with async loading of style sheets -->
+	<style>
+		body {
+			opacity: 0;
+		}
+	</style>
+
+	<title>Cafe Supremo Intranet</title>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="">
+    <link rel="shortcut icon" href="<!--$SCS_SITE_PATH-->/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="_scs_theme_root_/designs/_scs_design_name_/design.css">
+
+	<!--$SCS_RENDER_INFO-->
+	<!--$SCS_SITE_HEADER-->
+	<!--$SCS_PAGE_HEADER-->
+</head>
+
+<body id="page-default">
+	<!-- Needed to override the default Sites Theme styles -->
+	<link rel="stylesheet" href="_scs_theme_root_/assets/css/styles.css">
+
+	<div class="header">
+		<div class="logocontainer scs-slot" id="logocontainer"></div>
+		<div class="navMenu scs-slot" id="navMenu"></div>
+		<div class="currentUser scs-slot" id="currentUser"></div>
+	</div>
+
+	<main>
+		<div class="banner scs-slot" id="banner">
+		</div>
+		<div class="headline scs-slot" id="headline">
+		</div>
+
+		<div class="content scs-slot scs-responsive" id="Content">
+		</div>
+	</main>
+
+	<footer>
+		<div class="footer scs-slot scs-responsive" id="footer">
+		</div>
+	</footer>
+
+	<!-- Main JavaScript -->
+	<script data-main="/_sitescloud/renderer/renderer.js" src="/_sitescloud/renderer/require.js"></script>
+
+	<!--$SCS_PAGE_FOOTER-->
+	<!--$SCS_SITE_FOOTER-->
+
+	<!-- Avoid FOUC issue in FF with async loading of style sheets -->
+	<style>
+		body {
+			opacity: 1;
+		}
+	</style>
+</body>
+
+</html>
